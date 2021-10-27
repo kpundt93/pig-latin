@@ -24,6 +24,7 @@ _Users will enter a phrase or sentence into the webpage and it will be translate
 * _For words beginning with one or more consonants, move all of the first consecutive consonants to the end and add "ay". Examples: "code" becomes "odecay" and "move" becomes "ovemay."_
 * _If the first consonants include "qu", move the "q" and the "u." Don't forget about words like "squeal" where "qu" doesn't come first! Examples: "quick" becomes "ickquay" while "squeal" becomes "quealsay."_
 * _The program will ignore non-alphabetic characters. Example: Special characters #$% are ignored! Example: ecialSpay aracterschay #$% areway ignoredway!_
+* _If the user enters nothing and submits it, the program will display an error message and ask the user to enter a word or phrase to translate._
 
 ## Tests
 * _Describe: pigLatin(text)_
@@ -41,24 +42,28 @@ _Users will enter a phrase or sentence into the webpage and it will be translate
   _Expected Output: "odecay"_
 
 * _Test: It will move all of the first consecutive consonants of multiple words to the end and add "ay"._
-  _Code: pigLatin("Cool code")_
+  _Code: pigLatin("Cool code");_
   _Expected Output: "oolCay odecay"_
 
 * _Test: It will translate all words regardless of consonants or vowels._
-  _Code: pigLatin("Code is cool")_
+  _Code: pigLatin("Code is cool");_
   _Expected Output: "odeCay isway oolcay_
   
 * _Test: It will translate and put puncuation in the proper place_
-  _Code: pigLatin("Code is cool!")_
+  _Code: pigLatin("Code is cool!");_
   _Expected Output: "odeCay isway oolcay!"_
 
 * _Test: It will move qu words to the back of a word_
-  _Code: pigLatin("The quick brown fox")_
+  _Code: pigLatin("The quick brown fox");_
   _Expected Output: "heTay ickquay rownbay oxfay"_
 
 * _Test: It will ignore input with non-words_
-  _Code: pigLatin("!@#$")_
+  _Code: pigLatin("!@#$");_
   _Expected Output:""_
+
+* _Test: It will display an error message if nothing is submitted._
+  _Code: pigLatin("");_
+  _Expected Output:"Error! Please enter a word or a phrase."_
 
 ## Setup/Installation Requirements
 
