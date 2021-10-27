@@ -36,7 +36,7 @@ function pigLatin(text) {
         newSentance += newWord + " ";
       }
       else{
-        return newSentance
+        newSentance;
       }
       
     });
@@ -46,3 +46,19 @@ function pigLatin(text) {
 }
 
 // UI Logic
+$(document).ready(function(){
+  $("form#translator").submit(function(event){
+    event.preventDefault();
+    const passage = $("#text-passage").val();
+    
+
+    if (passage === "") {
+      $("#error").append("<p>Error! You have to enter a word or phrase!</p>");
+    }
+    else {
+      $("#translation").html(pigLatin(passage));
+      $("#error").hide();
+    }
+    
+  });
+});
